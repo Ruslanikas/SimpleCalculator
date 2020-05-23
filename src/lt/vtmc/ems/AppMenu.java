@@ -7,8 +7,8 @@ public class AppMenu {
 	private Scanner input = new Scanner(System.in);
 
 	public void mainMenu() throws Exception {
-
-		while (exit != 'y') {
+		// TODO
+		while (exit != 'n') {
 			System.out.println("Simple Java calculator ver. 1.0");
 			arithmeticCalculateMenu();
 			exitMenu();
@@ -16,46 +16,49 @@ public class AppMenu {
 	}
 
 	private void arithmeticCalculateMenu() throws Exception {
-
+		// TODO
 		System.out.print("First number: ");
-		int x = Integer.parseInt(input.next());
+		int number1 = input.nextInt();
 		System.out.print("Second number: ");
-		int y = Integer.parseInt(input.next());
+		int number2 = input.nextInt();
 		System.out.print("Operator: ");
 		String op = input.next();
 
-		int z = 0;
+		int result = 0;
 
 		if (op.equals("+")) {
-			z = x + y;
+			result = number1 + number2;
 		} else if (op.equals("-")) {
-			z = x - y;
+			result = number1 - number2;
 		} else if (op.equals("*")) {
-			z = x * y;
+			result = number1 * number2;
 		} else if (op.equals("/")) {
-			z = x / y;
+			result = number1 / number2;
 		} else {
 			throw new Exception("Operator not recognized");
 		}
-		System.out.println("Result: " + z);
+		System.out.println("Result: " + result);
 	}
 
 	private void exitMenu() {
-
+		// TODO
 		System.out.println("Continue (y/n): ");
 		String read = input.next().toLowerCase();
+		input.close();
 		char close = read.charAt(0);
 		switch (close) {
 		case 'y':
-			exit = 'n';
-			break;
-		case 'n':
 			exit = 'y';
 			System.out.println("Good luck!");
 			break;
+		case 'n':
+
+			exit = 'n';
+			System.out.println("Good Bye!");
+			break;
 		default:
 			System.out.println("Wrong symbol!");
-			exit = 'n';
+
 		}
 	}
 }
