@@ -7,7 +7,7 @@ public class AppMenu {
 	private Scanner input = new Scanner(System.in);
 
 	public void mainMenu() throws Exception {
-		// TODO
+
 		while (exit != 'n') {
 			System.out.println("Simple Java calculator ver. 1.0");
 			arithmeticCalculateMenu();
@@ -16,7 +16,7 @@ public class AppMenu {
 	}
 
 	private void arithmeticCalculateMenu() throws Exception {
-		// TODO
+
 		System.out.print("First number: ");
 		int number1 = input.nextInt();
 		System.out.print("Second number: ");
@@ -41,7 +41,7 @@ public class AppMenu {
 	}
 
 	private void exitMenu() {
-		// TODO
+
 		System.out.println("Continue (y/n): ");
 		String read = input.next().toLowerCase();
 		input.close();
